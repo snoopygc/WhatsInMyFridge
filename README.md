@@ -119,33 +119,6 @@ open WhatsInMyFridgeD1.xcodeproj
 6. **Receipt Scanning**: Use the camera to scan shopping receipts and extract ingredient lists
 7. **Expiration Date Scanning**: Point the camera at food packaging to read and track expiration dates
 
-## 🔧 Core Components
-
-### ContentView
-The main view that displays the list of items and handles user interactions for adding and deleting items.
-
-### PersistenceController
-Manages the CoreData stack and provides both shared and preview instances for the app and SwiftUI previews.
-
-### Item Entity
-CoreData entity that stores:
-- `timestamp`: Date when the item was added
-- `name`: Name of the food item
-- `category`: Category of the food item (e.g., dairy, vegetables)
-- `expirationDate`: Predicted expiration date based on shelf life calculations
-
-### CameraView
-Handles camera input for food item recognition using YOLO and CoreML.
-
-### OCRView
-Uses OCR technology to:
-- Extract ingredient lists from shopping receipts
-- Read text from receipts and product labels
-- Detect and parse expiration dates when visible on packaging
-
-### ShelfLifePredictor
-Implements scientific models (Arrhenius Equation, ASLT, Q10 Rule) to predict and recommend food storage durations based on temperature zones.
-
 ## 🔬 Research & Methodology
 
 ### Shelf Life Prediction Model
@@ -179,6 +152,33 @@ Research on optimal food placement based on:
 - Temperature gradients within refrigerators
 - Food category requirements (dairy, meat, vegetables, etc.)
 - Humidity and air circulation patterns
+
+## 🔧 Core Components
+
+### ContentView
+The main view that displays the list of items and handles user interactions for adding and deleting items.
+
+### PersistenceController
+Manages the CoreData stack and provides both shared and preview instances for the app and SwiftUI previews.
+
+### Item Entity
+CoreData entity that stores:
+- `timestamp`: Date when the item was added
+- `name`: Name of the food item
+- `category`: Category of the food item (e.g., dairy, vegetables)
+- `expirationDate`: Predicted expiration date based on shelf life calculations
+
+### CameraView
+Handles camera input for food item recognition using YOLO and CoreML.
+
+### OCRView
+Uses OCR technology to:
+- Extract ingredient lists from shopping receipts
+- Read text from receipts and product labels
+- Detect and parse expiration dates when visible on packaging
+
+### ShelfLifePredictor
+Implements scientific models (Arrhenius Equation, ASLT, Q10 Rule) to predict and recommend food storage durations based on temperature zones.
 
 ## 🎓 Academic Context
 
